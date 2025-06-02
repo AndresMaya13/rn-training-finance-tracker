@@ -1,35 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
-  StyleSheet,
-  Text,
-  SafeAreaView
+  SafeAreaView, Text,
 } from 'react-native';
+import MonthSelector, { Month } from './components/MonthSelector';
+import { budgets } from './domain/Budget/MonthBudget';
 
 const App = () => {
+  const [selectedMonth, setSelectedMonth] = useState<number>(new Date().getMonth() + 1);
+  const [currentBudget, setCurrentBudget] = useState('');
+
+  const handleSelectMonth = (month: Month) => {
+    setSelectedMonth(month.id);
+    const budget = getCurrentBudget(month.id);
+    setCurrentBudget(JSON.stringify(budget));
+  };
+
+  const getCurrentBudget = (monthId: number) => {
+    return budgets.find(item => item.id === monthId);
+  };
+
   return (
-    <SafeAreaView>
-      <Text style={{fontSize: 40}}>Hola</Text>
+    <SafeAreaView style={{ flex: 1, paddingVertical: 20 }}>
+      <MonthSelector
+        selectedMonth={selectedMonth}
+        onSelectMonth={handleSelectMonth}
+      />
+      <Text>
+        {currentBudget}
+      </Text>
     </SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
