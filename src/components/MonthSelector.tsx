@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 
 export interface Month {
@@ -8,7 +8,7 @@ export interface Month {
 }
 
 interface MonthSelectorProps {
-  onSelectMonth: (month: Month) => void;
+  onSelectMonth: (monthId: number) => void;
   selectedMonth: number;
 }
 
@@ -28,13 +28,28 @@ const months: Month[] = [
 ];
 
 const MonthSelector: React.FC<MonthSelectorProps> = (props) => {
+  const flatListRef = useRef<FlatList>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      flatListRef.current?.scrollToIndex({
+        index: props.selectedMonth - 1,
+        animated: true,
+        viewPosition: 0.5,
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
+
+  }, [props]);
+
   const renderItem = ({ item }: { item: Month }) => (
     <TouchableOpacity
       style={[
         styles.monthItem,
         props.selectedMonth === item.id && styles.selectedMonthItem,
       ]}
-      onPress={() => props.onSelectMonth(item)}
+      onPress={() => props.onSelectMonth(item.id)}
     >
       <Text style={[
         styles.monthText,
@@ -46,6 +61,7 @@ const MonthSelector: React.FC<MonthSelectorProps> = (props) => {
   return (
     <View style={styles.container}>
       <FlatList
+        ref={flatListRef}
         data={months}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}

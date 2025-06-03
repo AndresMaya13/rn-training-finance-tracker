@@ -44,8 +44,8 @@ export const monthNames = [
 
 export const budgets: MonthBudget[] = monthNames.map((month) => ({
   ...month,
-  income: 1000,
-  expensesTotal: 998,
+  income: Math.round(Math.random() * 10000),
+  expensesTotal: Math.round(Math.random() * 1000),
   categories: [
     {
       name: 'OBLIGACIONES',
