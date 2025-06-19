@@ -2,14 +2,17 @@ import React from 'react';
 import {
   SafeAreaView,
 } from 'react-native';
+import { PaperProvider } from 'react-native-paper';
 import {styled} from './common/designSystem/styled';
 import {MainScreen} from './screens/MainScreen/MainScreen';
 
 const App = () => {
   return (
-    <AppContainer>
-      <MainScreen />
-    </AppContainer>
+      <PaperProvider>
+        <AppContainer>
+          <MainScreen />
+        </AppContainer>
+      </PaperProvider>
   );
 };
 

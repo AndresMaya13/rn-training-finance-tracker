@@ -1,0 +1,156 @@
+{
+  "uuid": "e23ecd9e-f9ff-4e73-acea-c7b1a207bdb8",
+  "lastMigration": 33,
+  "name": "Mocks",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "ef7df6b3-53a8-4de5-b856-c4ef3445819c",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/budget/:monthId",
+      "responses": [
+        {
+          "uuid": "bd08406d-aff6-4538-b4b1-1e91452af787",
+          "body": "{\n    \"id\": 6,\n    \"name\": \"Junio\",\n    \"shortName\": \"Jun\",\n    \"income\": 3849,\n    \"expensesTotal\": 99,\n    \"categories\": [\n        {\n            \"name\": \"OBLIGACIONES\",\n            \"suggestedPercent\": 50,\n            \"maxAmount\": 500,\n            \"spentPercent\": 68,\n            \"spentAmount\": 340,\n            \"color\": \"#B0E57C\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Tarjetas crédito\",\n                    \"items\": [\n                        {\n                            \"name\": \"Master\",\n                            \"amount\": 8\n                        },\n                        {\n                            \"name\": \"Visa\",\n                            \"amount\": 10\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Hogar\",\n                    \"items\": [\n                        {\n                            \"name\": \"Alimentación\",\n                            \"amount\": 100\n                        },\n                        {\n                            \"name\": \"Servicios\",\n                            \"amount\": 30\n                        },\n                        {\n                            \"name\": \"Arriendo\",\n                            \"amount\": 200\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Transporte\",\n                    \"items\": [\n                        {\n                            \"name\": \"Transporte público\",\n                            \"amount\": 50\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Prestaciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Prestaciones sociales\",\n                            \"amount\": 100\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Otros\",\n                    \"items\": [\n                        {\n                            \"name\": \"Varios\",\n                            \"amount\": 32\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DIVERSIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7B7A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Entretenimiento\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cine\",\n                            \"amount\": 5\n                        },\n                        {\n                            \"name\": \"Restaurantes\",\n                            \"amount\": 5\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"AHORRO\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 0,\n            \"spentAmount\": 0,\n            \"color\": \"#A3C4F7\",\n            \"subcategories\": []\n        },\n        {\n            \"name\": \"FORMACIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7E6A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Cursos\",\n                    \"items\": [\n                        {\n                            \"name\": \"Curso online\",\n                            \"amount\": 10\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"INVERSIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 25,\n            \"spentAmount\": 25,\n            \"color\": \"#A3F7B7\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Acciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Bolsa\",\n                            \"amount\": 25\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DONACIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 1,\n            \"color\": \"#F7A3C4\",\n            \"subcategories\": [\n                {\n                    \"name\": \"ONG\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cruz Roja\",\n                            \"amount\": 1\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Junio",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "monthId",
+              "value": "6",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "105836f0-6433-47a7-8817-29ea5499855a",
+          "body": "{\n    \"id\": 5,\n    \"name\": \"Mayo\",\n    \"shortName\": \"May\",\n    \"income\": 1379,\n    \"expensesTotal\": 343,\n    \"categories\": [\n        {\n            \"name\": \"OBLIGACIONES\",\n            \"suggestedPercent\": 50,\n            \"maxAmount\": 500,\n            \"spentPercent\": 68,\n            \"spentAmount\": 340,\n            \"color\": \"#B0E57C\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Tarjetas crédito\",\n                    \"items\": [\n                        {\n                            \"name\": \"Master\",\n                            \"amount\": 8\n                        },\n                        {\n                            \"name\": \"Visa\",\n                            \"amount\": 10\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Hogar\",\n                    \"items\": [\n                        {\n                            \"name\": \"Alimentación\",\n                            \"amount\": 100\n                        },\n                        {\n                            \"name\": \"Servicios\",\n                            \"amount\": 30\n                        },\n                        {\n                            \"name\": \"Arriendo\",\n                            \"amount\": 200\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Transporte\",\n                    \"items\": [\n                        {\n                            \"name\": \"Transporte público\",\n                            \"amount\": 50\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Prestaciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Prestaciones sociales\",\n                            \"amount\": 100\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Otros\",\n                    \"items\": [\n                        {\n                            \"name\": \"Varios\",\n                            \"amount\": 32\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DIVERSIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7B7A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Entretenimiento\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cine\",\n                            \"amount\": 5\n                        },\n                        {\n                            \"name\": \"Restaurantes\",\n                            \"amount\": 5\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"AHORRO\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 0,\n            \"spentAmount\": 0,\n            \"color\": \"#A3C4F7\",\n            \"subcategories\": []\n        },\n        {\n            \"name\": \"FORMACIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7E6A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Cursos\",\n                    \"items\": [\n                        {\n                            \"name\": \"Curso online\",\n                            \"amount\": 10\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"INVERSIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 25,\n            \"spentAmount\": 25,\n            \"color\": \"#A3F7B7\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Acciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Bolsa\",\n                            \"amount\": 25\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DONACIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 1,\n            \"color\": \"#F7A3C4\",\n            \"subcategories\": [\n                {\n                    \"name\": \"ONG\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cruz Roja\",\n                            \"amount\": 1\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "Mayo",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "monthId",
+              "value": "5",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "0c0281a5-0c3f-4d8e-ac58-069501050326",
+          "body": "{\n    \"id\": 7,\n    \"name\": \"Julio\",\n    \"shortName\": \"Jul\",\n    \"income\": 5500,\n    \"expensesTotal\": 273,\n    \"categories\": [\n        {\n            \"name\": \"OBLIGACIONES\",\n            \"suggestedPercent\": 50,\n            \"maxAmount\": 500,\n            \"spentPercent\": 68,\n            \"spentAmount\": 340,\n            \"color\": \"#B0E57C\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Tarjetas crédito\",\n                    \"items\": [\n                        {\n                            \"name\": \"Master\",\n                            \"amount\": 8\n                        },\n                        {\n                            \"name\": \"Visa\",\n                            \"amount\": 10\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Hogar\",\n                    \"items\": [\n                        {\n                            \"name\": \"Alimentación\",\n                            \"amount\": 100\n                        },\n                        {\n                            \"name\": \"Servicios\",\n                            \"amount\": 30\n                        },\n                        {\n                            \"name\": \"Arriendo\",\n                            \"amount\": 200\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Transporte\",\n                    \"items\": [\n                        {\n                            \"name\": \"Transporte público\",\n                            \"amount\": 50\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Prestaciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Prestaciones sociales\",\n                            \"amount\": 100\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Otros\",\n                    \"items\": [\n                        {\n                            \"name\": \"Varios\",\n                            \"amount\": 32\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DIVERSIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7B7A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Entretenimiento\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cine\",\n                            \"amount\": 5\n                        },\n                        {\n                            \"name\": \"Restaurantes\",\n                            \"amount\": 5\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"AHORRO\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 0,\n            \"spentAmount\": 0,\n            \"color\": \"#A3C4F7\",\n            \"subcategories\": []\n        },\n        {\n            \"name\": \"FORMACIÓN\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 10,\n            \"color\": \"#F7E6A3\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Cursos\",\n                    \"items\": [\n                        {\n                            \"name\": \"Curso online\",\n                            \"amount\": 10\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"INVERSIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 25,\n            \"spentAmount\": 25,\n            \"color\": \"#A3F7B7\",\n            \"subcategories\": [\n                {\n                    \"name\": \"Acciones\",\n                    \"items\": [\n                        {\n                            \"name\": \"Bolsa\",\n                            \"amount\": 25\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"DONACIONES\",\n            \"suggestedPercent\": 10,\n            \"maxAmount\": 100,\n            \"spentPercent\": 1,\n            \"spentAmount\": 1,\n            \"color\": \"#F7A3C4\",\n            \"subcategories\": [\n                {\n                    \"name\": \"ONG\",\n                    \"items\": [\n                        {\n                            \"name\": \"Cruz Roja\",\n                            \"amount\": 1\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Jul",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "monthId",
+              "value": "7",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "ef7df6b3-53a8-4de5-b856-c4ef3445819c"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
