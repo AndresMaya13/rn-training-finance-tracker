@@ -21,7 +21,7 @@ export class MainPresenter extends PresenterBase<MainPresenterVM> {
       this.updateModel({
         selectedMonth: monthId,
         currentBudget: budget,
-        summaryBudget,
+        summaryBudget: summaryBudget,
       });
     });
   };
@@ -36,15 +36,11 @@ export class MainPresenter extends PresenterBase<MainPresenterVM> {
   }
 
   private buildSummaryBudget(categories: ExpenseCategory[]) {
-    const summaryBudget: any = [];
-    categories.forEach(category  =>  {
-      summaryBudget.push({
-        name: category.name,
-        suggestedPercent:category.suggestedPercent,
-        spentAmount: category.spentAmount,
-      });
-    });
-    return summaryBudget;
+    return categories.map(category => ({
+      name: category.name,
+      suggestedPercent:category.suggestedPercent,
+      spentAmount: category.spentAmount,
+    }));
   }
 }
 
@@ -52,5 +48,7 @@ export interface MainPresenterVM {
   isLoading: boolean
   selectedMonth: number
   currentBudget: MonthBudget | undefined
-  summaryBudget: []
+  summaryBudget: SummaryBudgetVM []
 }
+
+export interface SummaryBudgetVM extends Pick<ExpenseCategory, 'name' | 'suggestedPercent' | 'spentAmount'>  {}
